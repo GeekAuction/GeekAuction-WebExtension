@@ -1,0 +1,33 @@
+{
+
+  "manifest_version": 2,
+  "name": "GeekAuction",
+  "version": "1.0",
+
+  "description": "GeekAuction helps you to purchase comics with pleasure",
+
+  "icons": {
+    "128": "logo.png"
+  },
+  
+  "background": {
+    "scripts": ["background.js"]
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://vk.com/*"],
+      "js": ["index.js"],
+      "css": ["vk-com-profile.css"]
+    }
+  ],
+
+  "permissions": [
+    "activeTab",
+    "webRequest",
+    "webNavigation",
+    "*://vk.com/*",
+    "https://raw.githubusercontent.com/GeekAuction/Database/master/GeekAuction.json"
+  ]
+
+}
